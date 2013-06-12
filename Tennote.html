@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tennote</title>
+	<head>
+	<body>
+		<button id = "NavMenuButton"><img src = "" alt = "Navigation Menu"></button>
+		<h1>Tennotes</h1>
+		<div id = "NavMenu">
+			<ul>
+				<li>Player's Name</li>
+				<li></li>
+				<li><a href="">Player Book</a></li>
+				<li><a href="">Player Search</a></li>
+				<li><a href="">New Player</a></li>
+				<li></li>
+				<li><a href="">Match Book</a></li>
+				<li><a href="">New Match</a></li>
+				<li></li>
+				<li><a href="">Personal Statistics</a></li>
+				<li><a href="">About Tennote</a></li>
+			</ul>
+		</div>
+		<div id = content>
+			<div id = "NewUserWelcome">
+				<h2>Welcome</h2>
+				Welcome to Tennote! Using Tennote, you will be able to track matches you have played and record match statistics as well as personal notes about each match or opponent. Tennote will help you keep track of your development as a player, improving your game.
+			</div>
+			<div id = "PlayerBook">
+				<div id = "PlayerBookContent">
+					<div id = "PlayerList">
+						
+					</div>
+					<div id ="PlayerInfo">
+						<h2>Opponent's Name</h2>
+						<button id = "EditPlayer">Edit</button><br>
+						<ul>
+							<li id = "playerHandedness">R/L Handed</li>
+							<li id = "playerForehand">Forehand: </li>
+							<li id = "playerBackhand">Backhand: </li>
+							<li id = "playerVolleys">Volleys: </li>
+							<li id = "playerFirstServe">1st Serve: </li>
+							<li id = "playerSecondServe">2nd Serve: </li>
+							<li id = "playerSpeed">Speed: </li>
+							<li id = "playerConsistency">Consistency: </li>
+							<li id = "playerPower">Power: </li>
+						</ul>
+						<p>
+							Additional Notes: 
+						</p>
+						<p>
+							Contact Info:
+								<ul>
+									<li id = "playerPhoneNumber">Phone Number: </li>
+									<li id = "playerLocation">Country/State(if in USA): </li>
+								</ul>
+						</p>
+						</table>
+					</div>
+					<div id = "Match History">
+						<h2 id = "MatchHistory">Player vs. Opponent Head to Head</h2>
+						<h3 id = "headToHead">WINS-LOSSES</h3>
+						<table>
+							<tr>
+								<td>Date</td>
+								<td>Tournament</td>
+								<td>Surface</td>
+								<td>Winner</td>
+								<td>Score</td>
+							</tr>
+						</table>
+					</div>
+					<div id = "MatchStats">
+						<h2>Winner: PlayerName</h2>
+						<h3>Score: </h3>
+						<table id = "SingleMatchStats" border = "1dp">
+							<tr>
+								<td>Player Name</td>
+								<td>Statistic</td>
+								<td>Opponent Name</td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Winners</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Unforced Errors</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Aces</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Double Faults</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td></td>
+								<td>Break Point Conversion</td>
+								<td></td>
+							</tr>
+						</table>
+						<h3>Additional Notes about this match</h3>
+						<p id = "additionalMatchNotes">
+						</p>						
+					</div>
+				</div>
+			</div>
+			<div id = "PlayerSearch">
+				<h2>Player Search</h2>
+				<p>Fill out as many of these fields as you want!</p>
+				<form id = "PlayerSearchForm">
+					<input type = "text" name = "lastNameSearch" placeholder = "Last Name"><br>
+					<input type = "text" name = "firstNameSearch" placeholder = "First Name"><br>
+					<input type = "radio" name = "handednessSearch" value = "R">R 
+					<input type = "radio" name = "handednessSearch" value = "L">L handed
+					<table border = "0">
+						<tr align = "center">
+							<td></td>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>Forehand</td>
+							<td><input type = "radio" name = "forehandSearch" value = "1"></td>
+							<td><input type = "radio" name = "forehandSearch" value = "2"></td>
+							<td><input type = "radio" name = "forehandSearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Backhand</td>
+							<td><input type = "radio" name = "backhandSearch" value = "1"></td>
+							<td><input type = "radio" name = "backhandSearch" value = "2"></td>
+							<td><input type = "radio" name = "backhandSearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Volleys</td>
+							<td><input type = "radio" name = "volleysSearch" value = "1"></td>
+							<td><input type = "radio" name = "volleysSearch" value = "2"></td>
+							<td><input type = "radio" name = "volleysSearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>1st Serve</td>
+							<td><input type = "radio" name = "firstServeSearch" value = "1"></td>
+							<td><input type = "radio" name = "firstServeSearch" value = "2"></td>
+							<td><input type = "radio" name = "firstServeSearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>2nd Serve</td>
+							<td><input type = "radio" name = "secondServeSearch" value = "1"></td> 
+							<td><input type = "radio" name = "secondServeSearch" value = "2"></td>
+							<td><input type = "radio" name = "secondServeSearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Speed</td>
+							<td><input type = "radio" name = "speedSearch" value = "1"></td>
+							<td><input type = "radio" name = "speedSearch" value = "2"></td>
+							<td><input type = "radio" name = "speedSearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Consistency</td>
+							<td><input type = "radio" name = "consistencySearch" value = "1"></td>
+							<td><input type = "radio" name = "consistencySearch" value = "2"></td>
+							<td><input type = "radio" name = "consistencySearch" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Power</td>
+							<td><input type = "radio" name = "powerSearch" value = "1"></td>
+							<td><input type = "radio" name = "powerSearch" value = "2"></td>
+							<td><input type = "radio" name = "powerSearch" value = "3"></td>
+						</tr><br>
+					</table>
+				<input type = "submit" value = "Search!">
+				</form>		
+			</div>
+			<div id = "NewPlayer">
+				<h2>New Player</h2>
+				<form id = "NewPlayerForm">
+					<input type = "text" name = "lastNameSave" placeholder = "Last Name"><br>
+					<input type = "text" name = "firstNameSave" placeholder = "First Name"><br>
+					<input type = "radio" name = "handednessSave" value = "R">R 
+					<input type = "radio" name = "handednessSave" value = "L">L handed
+					<table border = "0">
+						<tr align = "center">
+							<td></td>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>Forehand</td>
+							<td><input type = "radio" name = "forehandSave" value = "1"></td>
+							<td><input type = "radio" name = "forehandSave" value = "2"></td>
+							<td><input type = "radio" name = "forehandSave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Backhand</td>
+							<td><input type = "radio" name = "backhandSave" value = "1"></td>
+							<td><input type = "radio" name = "backhandSave" value = "2"></td>
+							<td><input type = "radio" name = "backhandSave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Volleys</td>
+							<td><input type = "radio" name = "volleysSave" value = "1"></td>
+							<td><input type = "radio" name = "volleysSave" value = "2"></td>
+							<td><input type = "radio" name = "volleysSave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>1st Serve</td>
+							<td><input type = "radio" name = "firstServeSave" value = "1"></td>
+							<td><input type = "radio" name = "firstServeSave" value = "2"></td>
+							<td><input type = "radio" name = "firstServeSave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>2nd Serve</td>
+							<td><input type = "radio" name = "secondServeSave" value = "1"></td> 
+							<td><input type = "radio" name = "secondServeSave" value = "2"></td>
+							<td><input type = "radio" name = "secondServeSave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Speed</td>
+							<td><input type = "radio" name = "speedSave" value = "1"></td>
+							<td><input type = "radio" name = "speedSave" value = "2"></td>
+							<td><input type = "radio" name = "speedSave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Consistency</td>
+							<td><input type = "radio" name = "consistencySave" value = "1"></td>
+							<td><input type = "radio" name = "consistencySave" value = "2"></td>
+							<td><input type = "radio" name = "consistencySave" value = "3"></td>
+						</tr>
+						<tr>
+							<td>Power</td>
+							<td><input type = "radio" name = "powerSave" value = "1"></td>
+							<td><input type = "radio" name = "powerSave" value = "2"></td>
+							<td><input type = "radio" name = "powerSave" value = "3"></td>
+						</tr><br>
+					</table>
+					<input type = "submit" value = "Save!">
+				</form>
+			</div>
+			<div id = "MatchBook">
+				
+			</div>
+			<div id = "NewMatch">
+				<div id = "NewMatchContent">
+					<div id = "BasicMatchInfo">
+						<h2>New Match</h2>
+						<form>
+							<p>
+								<input type = "text" name = "opponentsName" placeholder = "Name of Opponent"><br>
+								<input type = "text" name = "tournamentName" placeholder = "Tournament"><br>
+								Surface: <input type = "radio" name = "surface" value = "Hard">Hard   <input type = "radio" name = "surface" value = "Clay">Clay   <input type = "radio" name = "surface" value = "Indoor">Indoor   <input type = "radio" name = "surface" value = "Grass">Grass<br>
+								Date (MM/DD/YYYY): <input type = "text" name = "month">/<input type = "text" name = "day">/<input type = "text" name = "year"><br>
+								<input type = "submit" value = "Save!">
+							</p>
+							<button>Now input match statistics and the score!</button>
+						</form>
+					</div>
+					<div id = "MatchStatistics">
+						<h2>Match Statistics</h2>
+							<form>
+								<table border = "0">
+									<tr>
+										<td id = "matchStatPlayerName">Player Name</td>
+										<td id = "matchStatOpponentName">Opponent's Name</td>
+									</tr>
+									<tr>
+										<td><input type = "number" name = "playerWinners" id = "playerWinners" min = "0" max = "150" step = "1" value = "0"> Winners </td>
+										<td><input type = "number" name = "opponentWinners" id = "opponentWinners" min = "0" max = "150" step = "1" value = "0"> Winners </td>
+									</tr>
+									<tr>
+										<td><input type = "number" name = "playerUnforcedErrors" id = "playerUnforcedErrors" min = "0" max = "150" step = "1" value = "0"> Unforced Errors </td>
+										<td><input type = "number" name = "opponentUnforcedErrors" id = "opponentUnforcedErrors" min = "0" max = "150" step = "1" value = "0"> Unforced Errors </td>
+									</tr>
+									<tr>
+										<td><input type = "number" name = "playerAces" id = "playerAces" min = "0" max = "150" step = "1" value = "0"> Aces </td>
+										<td><input type = "number" name = "opponentAces" id = "opponentAces" min = "0" max = "150" step = "1" value = "0"> Aces </td>
+									</tr>
+									<tr>
+										<td><input type = "number" name = "playerDoubleFaults" id = "playerDoubleFaults" min = "0" max = "150" step = "1" value = "0"> Double Faults </td>
+										<td><input type = "number" name = "opponentDoubleFaults" id = "opponentDoubleFaults" min = "0" max = "150" step = "1" value = "0"> Double Faults </td>
+									</tr>
+									<tr>
+										<td><input type = "number" name = "playerBreakPointChances" id = "playerBreakPointChances" min = "0" max = "150" step = "1" value = "0"> Break Point Chances </td>
+										<td><input type = "number" name = "opponentBreakPointChances" id = "opponentBreakPointChances" min = "0" max = "150" step = "1" value = "0"> Break Point Chances </td>
+									</tr>
+									<tr>
+										<td><input type = "number" name = "playerBreakPointsWon" id = "playerBreakPointsWon" min = "0" max = "150" step = "1" value = "0"> Break Points Converted </td>
+										<td><input type = "number" name = "opponentBreakPointsWon" id = "opponentBreakPointsWon" min = "0" max = "150" step = "1" value = "0"> Break Points Converted </td>
+									</tr>
+								</table>
+								<h3>Score</h3>
+								<table>
+									<tr>
+										<td>Player:</td>
+										<td><input type = "number" name = "playerGamesSetOne" id = "playerGamesSetOne" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "playerGamesSetTwo" id = "playerGamesSetTwo" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "playerGamesSetThree" id = "playerGamesSetThree" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "playerGamesSetFour" id = "playerGamesSetFour" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "playerGamesSetFive" id = "playerGamesSetFive" min = "0" max = "10" step = "1" value = "0"></td>
+									</tr>
+									<tr>
+										<td>Opponent:</td>
+										<td><input type = "number" name = "opponentGamesSetOne" id = "opponentGamesSetOne" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "opponentGamesSetTwo" id = "opponentGamesSetTwo" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "opponentGamesSetThree" id = "opponentGamesSetThree" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "opponentGamesSetFour" id = "opponentGamesSetFour" min = "0" max = "10" step = "1" value = "0"></td>
+										<td><input type = "number" name = "opponentGamesSetFive" id = "opponentGamesSetFive" min = "0" max = "10" step = "1" value = "0"></td>
+									</tr>
+								</table>
+								Winner: <input type = "radio" name = "winner" value = "player">Player   <input type = "radio" name = "surface" value = "opponent">Opponent<br>
+								<input type = "submit" value = "Save Match Stats!">
+							</form>
+					</div>
+				</div>
+			</div>
+			<div id = "PersonalStats">
+				
+			</div>
+			<div id = "AboutTennote">
+				<h2>
+				About Tennote
+				</h2>
+				Herro users and warecome to worrd of pokemon.
+			</div>
+		</div>
+	</body>
+</html>
