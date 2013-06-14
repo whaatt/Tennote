@@ -1,0 +1,68 @@
+Tennote list of "id"s
+
+NavMenuButton		
+NavMenu				
+content
+	NewUserWelcome
+	PlayerBook
+		PlayerBookContent
+			PlayerList
+			PlayerInfo
+				EditPlayerButton
+				PlayerInfoList
+					playerHandedness
+					playerForehand
+					playerBackhand
+					playerVolleys
+					playerFirstServe
+					playerSecondServe
+					playerSpeed
+					playerConsistency
+					playerPower
+				PlayerAdditionalNotes
+				PlayerContactInfoList
+					playerPhoneNumber
+					playerLocation
+			MatchHistory
+				MatchHistoryTitle
+				headToHead
+				MatchHistoryTable
+			MatchStats	
+				MatchWinner
+				MatchScore
+				SingleMatchStats
+					UsersName
+					OpponentName
+					playerMatchWinners
+					opponentMatchWinners
+					playerMatchUnforcedErrors
+					opponentMatchUnforcedErrors
+					playerMatchAces
+					opponentMatchAces
+					playerMatchDoubleFaults
+					opponentMatchDoubleFaults
+					playerMatchBreakPointConversion
+					opponentMatchBreakPointConversion
+				additionalMatchNotes
+	PlayerSearch
+		PlayerSearchForm
+		PlayerSearchResults
+			SearchResultsList
+	NewPlayer
+		NewPlayerForm
+	NewMatch
+		NewMatchContent
+			NewMatchBasicInfo
+				NewMatchBasicInfoForm
+			NewMatchStatistics
+				NewMatchStatisticsForm
+	AboutTennote
+		AboutTennoteMessage
+
+
+
+
+Classes:
+
+UsersName
+contentDiv
