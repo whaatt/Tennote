@@ -1,4 +1,4 @@
-Tennote list of "id"s
+IDs
 
 NavMenuButton
 NavMenu		
@@ -70,6 +70,7 @@ content
 		NewMatchContent
 			NewMatchBasicInfo
 				NewMatchBasicInfoForm
+					NewMatchDate
 					NewMatchBasicSubmit
 			NewMatchStatistics
 				NewMatchStatisticsForm
@@ -78,10 +79,11 @@ content
 	AboutTennote
 		AboutTennoteMessage
 
+Classes
 
-
-
-Classes:
 PlayerBookContent
 UsersName
 contentDiv
+searchRadio
+saveRadio
+surfaceRadio

@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+	var picker = $('#NewMatchDate', this);
+    picker.mobipick();
+
 	function hideContent() {
 		$('.contentDiv').hide();
 	}
@@ -84,6 +87,7 @@ $(document).ready(function() {
 	$('#NewMatchLink').click(function() {
 		hideContent();
 		$('#NewMatch').show();
+		$('#NewMatchBasicInfo').show();
 		$('#NewMatchStatistics').hide();
 	});
 	
