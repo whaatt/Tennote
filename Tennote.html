@@ -8,22 +8,20 @@
 		<script src = "tennoteScript.js"></script>
 	<head>
 	<body>
-		<button id = "NavMenuButton"><img src = "" alt = "Navigation Menu"></img></button>
-		<select name="flip-1" id="flip-1" data-role="slider">
-			<option value="off">Off</option>
-			<option value="on">On</option>
-		</select> 
-		<h1>Tennotes</h1>
-		<div id = "NavMenu">
-			<ul>
+		<div data-role="header" data-position="fixed">
+			<h1>Tennote</h1>
+			<a id = "NavMenuButton" href="#NavMenu" data-icon="bars" data-iconpos="notext">Menu</a>
+		</div>
+		<div data-role = "panel" id = "NavMenu" data-position = "left" data-display = "push">
+			<ul data-role="listview">
 				<li class = "UsersName">User's Name</li>
 				<li></li>
-				<li><a href="" onclick = "PlayerBook(); return false;">Player Book</a></li>
-				<li><a href="" onclick = "PlayerSearch(); return false;">Player Search</a></li>
-				<li><a href="" onclick = "NewPlayer(); return false;">New Player</a></li>
-				<li><a href="" onclick = "NewMatch(); return false;">New Match</a></li>
+				<li><a id = "PlayerBookLink">Player Book</a></li>
+				<li><a id = "PlayerSearchLink">Player Search</a></li>
+				<li><a id = "NewPlayerLink">New Player</a></li>
+				<li><a id = "NewMatchLink">New Match</a></li>
 				<li></li>
-				<li><a href="" onclick = "AboutTennote(); return false;">About Tennote</a></li>
+				<li><a id = "AboutTennoteLink">About Tennote</a></li>
 			</ul>
 		</div>
 		<div id = "content">
@@ -34,10 +32,18 @@
 					</p>
 			</div>
 			<div id = "PlayerBook" class = "contentDiv">
-				<div id = "PlayerBookContent">
-					<div id = "PlayerList">
+				<div id = "PlayerList" class = "PlayerBookContent">
 					<h2>Player List</h2>
-						list o' players
+						<ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true" id = "ListOfPlayers">
+							<li><a id = "FillerKeyForPerson">Person</a></li>
+						</ul>
+				</div>
+				<div id = "PlayerInfoWithMatchHistory" class = "PlayerBookContent">
+					<div data-role = "tabs">
+						<ul>
+							<li><a id = "PlayerInfoTab">Player Information</a></li>
+							<li><a id = "MatchHistoryTab">Match History</a></li>
+						<ul>
 					</div>
 					<div id ="PlayerInfo">
 						<h2>Opponent's Name</h2>
@@ -67,9 +73,9 @@
 						</table>
 					</div>
 					<div id = "MatchHistory">
-						<h2 id = "MatchHistoryTitle">Player vs. Opponent Head to Head</h2>
+						<h2 id = "MatchHistoryTitle">Player vs. Opponent</h2>
 						<h3 id = "headToHead">WINS-LOSSES</h3>
-						<table id = "MatchHistoryTable">
+						<table id = "MatchHistoryTable" border = "1px">
 							<tr>
 								<td>Date</td>
 								<td>Tournament</td>
@@ -77,47 +83,54 @@
 								<td>Winner</td>
 								<td>Score</td>
 							</tr>
+							<tr id = "FillerMatchKey">
+								<td>today</td>
+								<td>Aussie</td>
+								<td>hard</td>
+								<td>Nadal</td>
+								<td>6-0, 6-0, 6-0</td>								
+							</tr>				
 						</table>
 					</div>
-					<div id = "MatchStats">
-						<h2 id = "MatchWinner">Winner: PlayerName</h2>
-						<h3 id = "MatchScore">Score: </h3>
-						<table id = "SingleMatchStats" border = "1dp">
-							<tr>
-								<td id = "UsersName">Player Name</td>
-								<td>Statistic</td>
-								<td id = "OpponentName">Opponent Name</td>
-							</tr>
-							<tr>
-								<td id = "playerMatchWinners"></td>
-								<td>Winners</td>
-								<td id ="opponentMatchWinners"></td>
-							</tr>
-							<tr>
-								<td id = "playerMatchUnforcedErrors"></td>
-								<td>Unforced Errors</td>
-								<td id = "opponentMatchUnforcedErrors"></td>
-							</tr>
-							<tr>
-								<td id = "playerMatchAces"></td>
-								<td>Aces</td>
-								<td id = "opponentMatchAces"></td>
-							</tr>
-							<tr>
-								<td id = "playerMatchDoubleFaults"></td>
-								<td>Double Faults</td>
-								<td id = "opponentMatchDoubleFaults"></td>
-							</tr>
-							<tr>
-								<td id = "playerMatchBreakPointConversion"></td>
-								<td>Break Point Conversion</td>
-								<td id = "opponentMatchBreakPointConversion"></td>
-							</tr>
-						</table>
-						<h3>Additional Notes about this match</h3>
-						<p id = "additionalMatchNotes">
-						</p>						
-					</div>
+				</div>
+				<div id = "MatchStats" class = "PlayerBookContent">
+					<h2 id = "MatchWinner">Winner: PlayerName</h2>
+					<h3 id = "MatchScore">Score: </h3>
+					<table id = "SingleMatchStats" border = "1dp">
+						<tr>
+							<td id = "UsersName">Player Name</td>
+							<td>Statistic</td>
+							<td id = "OpponentName">Opponent Name</td>
+						</tr>
+						<tr>
+							<td id = "playerMatchWinners"></td>
+							<td>Winners</td>
+							<td id ="opponentMatchWinners"></td>
+						</tr>
+						<tr>
+							<td id = "playerMatchUnforcedErrors"></td>
+							<td>Unforced Errors</td>
+							<td id = "opponentMatchUnforcedErrors"></td>
+						</tr>
+						<tr>
+							<td id = "playerMatchAces"></td>
+							<td>Aces</td>
+							<td id = "opponentMatchAces"></td>
+						</tr>
+						<tr>
+							<td id = "playerMatchDoubleFaults"></td>
+							<td>Double Faults</td>
+							<td id = "opponentMatchDoubleFaults"></td>
+						</tr>
+						<tr>
+							<td id = "playerMatchBreakPointConversion"></td>
+							<td>Break Point Conversion</td>
+							<td id = "opponentMatchBreakPointConversion"></td>
+						</tr>
+					</table>
+					<h3>Additional Notes about this match</h3>
+					<p id = "additionalMatchNotes">
+					</p>						
 				</div>
 			</div>
 			<div id = "PlayerSearch" class = "contentDiv">
@@ -184,12 +197,14 @@
 							<td><input type = "radio" name = "powerSearch" value = "3"></td>
 						</tr><br>
 					</table>
-				<input type = "submit" value = "Search!">
+				<input type = "submit" value = "Search!" id = "PlayerSearchSubmit">
 				</form>		
 			</div>
 			<div id = "PlayerSearchResults" class = "contentDiv">
 				<h2>Search Results</h2>
-					<p id = "SearchResultsList"></p>
+					<ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true" id = "ListOfSearchPlayers">
+						<li><a id = "FillerKeyForSearchPerson">Search Person</a></li>
+					</ul>
 			</div>
 			<div id = "NewPlayer" class = "contentDiv">
 				<h2>New Player</h2>
@@ -254,8 +269,11 @@
 							<td><input type = "radio" name = "powerSave" value = "3"></td>
 						</tr><br>
 					</table>
-					<input type = "submit" value = "Save!">
+					<input type = "submit" value = "Save!" id = "NewPlayerSubmit">
 				</form>
+			</div>
+			<div id = "NewPlayerSaved" class = "contentDiv">
+				<h2>Player saved to player book!</h2>
 			</div>
 			<div id = "NewMatch" class = "contentDiv">
 				<div id = "NewMatchContent">
@@ -266,9 +284,8 @@
 							<input type = "text" name = "tournamentName" placeholder = "Tournament"><br>
 							Surface: <input type = "radio" name = "surface" value = "Hard">Hard   <input type = "radio" name = "surface" value = "Clay">Clay   <input type = "radio" name = "surface" value = "Indoor">Indoor   <input type = "radio" name = "surface" value = "Grass">Grass<br>
 							Date (MM/DD/YYYY): <input type = "text" name = "month">/<input type = "text" name = "day">/<input type = "text" name = "year"><br>
-							<input type = "submit" value = "Save!">
+							<input type = "submit" value = "Save! Enter Match Score Next" id = "NewMatchBasicSubmit">
 						</form>
-						<button>Now input match statistics and the score!</button>
 					</div>
 					<div id = "NewMatchStatistics">
 						<h2>Match Statistics</h2>
@@ -323,10 +340,13 @@
 									</tr>
 								</table>
 								Winner: <input type = "radio" name = "winner" value = "player">Player   <input type = "radio" name = "surface" value = "opponent">Opponent<br>
-								<input type = "submit" value = "Save Match Stats!">
+								<input type = "submit" value = "Save Match Stats!" id = "NewMatchStatisticsSubmit">
 							</form>
 					</div>
 				</div>
+			</div>
+			<div id = "NewMatchSaved" class = "contentDiv">
+				<h2>Match saved!</h2>
 			</div>
 			<div id = "AboutTennote" class = "contentDiv">
 				<h2>About Tennote</h2>

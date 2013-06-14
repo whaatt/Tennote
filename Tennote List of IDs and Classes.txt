@@ -1,61 +1,80 @@
 Tennote list of "id"s
 
-NavMenuButton		
-NavMenu				
+NavMenuButton
+NavMenu		
+	PlayerBookLink
+	PlayerSearchLink
+	NewPlayerLink
+	NewMatchLink
+	AboutTennoteLink
 content
 	NewUserWelcome
 	PlayerBook
-		PlayerBookContent
-			PlayerList
-			PlayerInfo
-				EditPlayerButton
-				PlayerInfoList
-					playerHandedness
-					playerForehand
-					playerBackhand
-					playerVolleys
-					playerFirstServe
-					playerSecondServe
-					playerSpeed
-					playerConsistency
-					playerPower
-				PlayerAdditionalNotes
-				PlayerContactInfoList
-					playerPhoneNumber
-					playerLocation
+		PlayerList
+			ListOfPlayers
+				FillerKeyForPerson
+		PlayerInfo
+			EditPlayerButton
+			PlayerInfoWithMatchHistory
+				PlayerInfoTab
+				MatchHistoryTab
+				PlayerInfo
+					EditPlayerButton
+					PlayerInfoList
+						playerHandedness
+						playerForehand
+						playerBackhand
+						playerVolleys
+						playerFirstServe
+						playerSecondServe
+						playerSpeed
+						playerConsistency
+						playerPower
+					PlayerAdditionalNotes
+					PlayerContactInfoList
+						playerPhoneNumber
+						playerLocation
 			MatchHistory
 				MatchHistoryTitle
 				headToHead
 				MatchHistoryTable
-			MatchStats	
-				MatchWinner
-				MatchScore
-				SingleMatchStats
-					UsersName
-					OpponentName
-					playerMatchWinners
-					opponentMatchWinners
-					playerMatchUnforcedErrors
-					opponentMatchUnforcedErrors
-					playerMatchAces
-					opponentMatchAces
-					playerMatchDoubleFaults
-					opponentMatchDoubleFaults
-					playerMatchBreakPointConversion
-					opponentMatchBreakPointConversion
-				additionalMatchNotes
+					FillerMatchKey
+		MatchStats	
+			MatchWinner
+			MatchScore
+			SingleMatchStats
+				UsersName
+				OpponentName
+				playerMatchWinners
+				opponentMatchWinners
+				playerMatchUnforcedErrors
+				opponentMatchUnforcedErrors
+				playerMatchAces
+				opponentMatchAces
+				playerMatchDoubleFaults
+				opponentMatchDoubleFaults
+				playerMatchBreakPointConversion
+				opponentMatchBreakPointConversion
+			additionalMatchNotes
 	PlayerSearch
 		PlayerSearchForm
+			PlayerSearchSubmit
 		PlayerSearchResults
-			SearchResultsList
+			ListOfSearchPlayers
+				FillerKeyForSearchPerson			
 	NewPlayer
 		NewPlayerForm
+			NewPlayerSubmit
+	NewPlayerSaved
 	NewMatch
 		NewMatchContent
 			NewMatchBasicInfo
 				NewMatchBasicInfoForm
+					NewMatchBasicSubmit
 			NewMatchStatistics
 				NewMatchStatisticsForm
+					NewMatchStatisticsSubmit
+	NewMatchSaved
 	AboutTennote
 		AboutTennoteMessage
 
@@ -63,6 +82,6 @@ content
 
 
 Classes:
-
+PlayerBookContent
 UsersName
 contentDiv
