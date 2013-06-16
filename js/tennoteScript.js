@@ -22,18 +22,34 @@ $(document).ready(function() {
 	$('#FillerKeyForPerson').click(function() {
 		$('#PlayerList').hide();
 		$('#PlayerInfoWithMatchHistory').show();
+		$('#PlayerInfo').show();
 		$('#MatchHistory').hide();
 	});
 	
 	$('#FillerKeyForSearchPerson').click(function() {
 		$('#PlayerSearchResults').hide();
 		$('#PlayerInfoWithMatchHistory').show();
+		$('#PlayerInfo').show()
 		$('#MatchHistory').hide();
 	});
 	
 	$('#FillerMatchKey').click(function() {
 		$('#PlayerInfoWithMatchHistory').hide();
 		$('#MatchStats').show();		
+	});
+	
+	$('#EditPlayerButton').click(function() {
+		$('#PlayerInfo').hide();
+		$('#EditPlayer').show();
+	});
+	
+	$('#EditPlayerSubmit').click(function(e) {
+		e.preventDefault();
+		$('#EditPlayer').hide();
+		$('#PlayerInfoWithMatchHistory').show();
+		$('#PlayerInfo').show();
+		$('#MatchHistory').hide();
+		return false;
 	});
 	
 	$('#PlayerSearchSubmit').click(function(e) {

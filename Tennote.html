@@ -149,6 +149,91 @@
 					</p>						
 				</div>
 			</div>
+			<div id="EditPlayer" class="contentDiv">
+				<form id="EditPlayerForm" style="text-align: center; width: 100%;">
+					<input type="text" name="lastNameEdit" value="lastName">
+					<input type="text" name="firstNameEdit" value="firstName"><br>
+					<select name="handednessEdit" data-role="slider">
+						<option value="r">Righty</option>
+						<option value="l">Lefty</option>
+					</select><br>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Forehand:</legend>
+							<input type="radio" id="forehand-1" name="forehandEdit" value="1">
+							<label for="forehand-1">Poor</label>
+							<input type="radio" id="forehand-2" name="forehandEdit" value="2">
+							<label for="forehand-2">Okay</label>
+							<input type="radio" id="forehand-3" name="forehandEdit" value="3">
+							<label for="forehand-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Backhand:</legend>
+							<input type="radio" id="backhand-1" name="backhandEdit" value="1">
+							<label for="backhand-1">Poor</label>
+							<input type="radio" id="backhand-2" name="backhandEdit" value="2">
+							<label for="backhand-2">Okay</label>
+							<input type="radio" id="backhand-3" name="backhandEdit" value="3">
+							<label for="backhand-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Volleys:</legend>
+							<input type="radio" id="volleys-1" name="volleysEdit" value="1">
+							<label for="volleys-1">Poor</label>
+							<input type="radio" id="volleys-2" name="volleysEdit" value="2">
+							<label for="volleys-2">Okay</label>
+							<input type="radio" id="volleys-3" name="volleysEdit" value="3">
+							<label for="volleys-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>First Serve:</legend>
+							<input type="radio" id="firstServe-1" name="firstServeEdit" value="1">
+							<label for="firstServe-1">Poor</label>
+							<input type="radio" id="firstServe-2" name="firstServeEdit" value="2">
+							<label for="firstServe-2">Okay</label>
+							<input type="radio" id="firstServe-3" name="firstServeEdit" value="3">
+							<label for="firstServe-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Second Serve:</legend>
+							<input type="radio" id="secondServe-1" name="secondServeEdit" value="1">
+							<label for="secondServe-1">Poor</label>
+							<input type="radio" id="secondServe-2" name="secondServeEdit" value="2">
+							<label for="secondServe-2">Okay</label>
+							<input type="radio" id="secondServe-3" name="secondServeEdit" value="3">
+							<label for="secondServe-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Speed:</legend>
+							<input type="radio" id="speed-1" name="speedEdit" value="1">
+							<label for="speed-1">Poor</label>
+							<input type="radio" id="speed-2" name="speedEdit" value="2">
+							<label for="speed-2">Okay</label>
+							<input type="radio" id="speed-3" name="speedEdit" value="3">
+							<label for="speed-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Consistency:</legend>
+							<input type="radio" id="consistency-1" name="consistencyEdit" value="1">
+							<label for="consistency-1">Poor</label>
+							<input type="radio" id="consistency-2" name="consistencyEdit" value="2">
+							<label for="consistency-2">Okay</label>
+							<input type="radio" id="consistency-3" name="consistencyEdit" value="3">
+							<label for="consistency-3">Good</label>
+						</fieldset>
+						<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" data-corners="false">
+							<legend>Power:</legend>
+							<input type="radio" id="power-1" name="powerEdit" value="1">
+							<label for="power-1">Poor</label>
+							<input type="radio" id="power-2" name="powerEdit" value="2">
+							<label for="power-2">Okay</label>
+							<input type="radio" id="power-3" name="powerEdit" value="3">
+							<label for="power-3">Good</label>
+						</fieldset>
+					</div><br>
+					<input type="submit" value="Save edits!" id="EditPlayerSubmit">
+				</form>
+			</div>
 			<div id="PlayerSearch" class="contentDiv">
 				<h2>Player Search</h2>
 				<p>Fill out as many of these fields as you want!</p>
@@ -405,7 +490,10 @@
 										<td><input type="number" name="opponentGamesSetFive" id="opponentGamesSetFive" min="0" max="10" step="1" value="0"></td>
 									</tr>
 								</table>
-								Winner: <input type="radio" name="winner" value="player">Player   <input type="radio" name="surface" value="opponent">Opponent<br>
+								<h3>Result:</h3>
+								<select name="newMatchResult" data-role="slider">
+									<option value="win">WIN</option>
+									<option value="loss">LOSS</option>
 								<input type="submit" value="Save Match Stats!" id="NewMatchStatisticsSubmit">
 							</form>
 					</div>
