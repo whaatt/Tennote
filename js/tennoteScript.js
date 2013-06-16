@@ -3,8 +3,22 @@ $(document).ready(function() {
 	var picker = $('#NewMatchDate', this);
     picker.mobipick();
 
+	function createPlayerBar() {
+		html = '<div data-role="navbar" id="playerTabs"><ul><li><a id="PlayerInfoTab">Player Information</a></li><li><a id="MatchHistoryTab">Match History</a></li></ul></div>';
+		$('#header').append(html);
+		$('#playerTabs').navbar();
+		$('#PlayerInfoTab').addClass('ui-btn-active');
+		$('#content').trigger('create');
+	}
+	
+	function destroyPlayerBar() {
+		$('#playerTabs').remove();
+		$('#content').trigger('create');
+	}
+	
 	function hideContent() {
 		$('.contentDiv').hide();
+		destroyPlayerBar(); // remove more custom menus below this, as necessary
 	}
 	
 	$(window).load(function() {
@@ -22,6 +36,7 @@ $(document).ready(function() {
 	$('#FillerKeyForPerson').click(function() {
 		$('#PlayerList').hide();
 		$('#PlayerInfoWithMatchHistory').show();
+		createPlayerBar();
 		$('#PlayerInfo').show();
 		$('#MatchHistory').hide();
 	});

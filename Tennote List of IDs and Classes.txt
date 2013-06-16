@@ -7,6 +7,8 @@ NavMenu
 	NewPlayerLink
 	NewMatchLink
 	AboutTennoteLink
+header
+	{playerTabs}
 content
 	NewUserWelcome
 	PlayerBook
@@ -58,15 +60,18 @@ content
 			additionalMatchNotes
 	EditPlayer
 		EditPlayerForm
+			[Edit-# IDs]
 			EditPlayerSubmit
 	PlayerSearch
 		PlayerSearchForm
+			[Search-# IDs]
 			PlayerSearchSubmit
 		PlayerSearchResults
 			ListOfSearchPlayers
 				FillerKeyForSearchPerson			
 	NewPlayer
 		NewPlayerForm
+			[Save-# IDs]
 			NewPlayerSubmit
 	NewPlayerSaved
 	NewMatch
