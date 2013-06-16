@@ -3,12 +3,17 @@ $(document).ready(function() {
 	var picker = $('#NewMatchDate', this);
     picker.mobipick();
 
+	// createPlayerBar and destroyPlayerBar are necessary
+	// because otherwise, the navbar will take up space
+	// at the top, even while hidden
+	// thusly, we create/destroy them on command. c00l
+	
 	function createPlayerBar() {
 		html = '<div data-role="navbar" id="playerTabs"><ul><li><a id="PlayerInfoTab">Player Information</a></li><li><a id="MatchHistoryTab">Match History</a></li></ul></div>';
 		$('#header').append(html);
 		$('#playerTabs').navbar();
-		$('#PlayerInfoTab').addClass('ui-btn-active');
-		$('#content').trigger('create');
+		$('#PlayerInfoTab').addClass('ui-btn-active'); // adds the active class
+		$('#content').trigger('create'); // this .trigger('create') business refreshes the jQM styling, which doesn't happen by default
 	}
 	
 	function destroyPlayerBar() {
