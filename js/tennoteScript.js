@@ -14,6 +14,15 @@ $(document).ready(function() {
 		$('#playerTabs').navbar();
 		$('#PlayerInfoTab').addClass('ui-btn-active'); // adds the active class
 		$('#content').trigger('create'); // this .trigger('create') business refreshes the jQM styling, which doesn't happen by default
+		$('#PlayerInfoTab').click(function() {
+			$('#PlayerInfo').show();
+			$('#MatchHistory').hide();
+		});
+		
+		$('#MatchHistoryTab').click(function() {
+			$('#PlayerInfo').hide();
+			$('#MatchHistory').show();
+		});
 	}
 	
 	function destroyPlayerBar() {
@@ -98,16 +107,6 @@ $(document).ready(function() {
 		$('#NewMatchStatistics').hide();
 		$('#NewMatchSaved').show();
 		return false; 		
-	});
-	
-	$('#PlayerInfoTab').click(function() {
-		$('#PlayerInfo').show();
-		$('#MatchHistory').hide();
-	});
-	
-	$('#MatchHistoryTab').click(function() {
-		$('#PlayerInfo').hide();
-		$('#MatchHistory').show();
 	});
 	
 	$('#PlayerSearchLink').click(function() {

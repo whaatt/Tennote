@@ -1,0 +1,26 @@
+Tennote Backend requests: 
+
+Login page: username/password
+	request to login
+	
+Registration page: username/password/email
+	request to create account
+	
+Under playerbook--each individual player: 
+	send player's name, requesting player info (shot ratings), additional notes, contact info, and match history with that player
+
+Under match history (for an individual player): chart is generated of all previous matches
+	each match is a link--sends that match info (i.e., date/score/surface/etc.) and requests specific info on that match (i.e., statistics, additional notes)
+	
+Edit Player Form--sends updated information on a specific player
+
+Player Search--sends a search, requests a list of players in the playerbook that match the search criteria (put into the form of a player search results page)
+
+New Player Form--sends info about a new player to add to the match book
+
+New Match Form--sends info on the match (basic info submitted first (i.e., opponent name, date, tournament name, surface, 
+		some other stuff that has not yet been done yet--I'll gloss over this for now until I finish the new "NewMatch" pages
+		
+
+
+
