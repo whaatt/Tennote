@@ -1,0 +1,30 @@
+Sync and Login Workflows
+**Work in Progress**
+
+
+Upload Sync
+
+1. Whenever data of any kind is saved to offline DB, add a JSON string to sync queue (probably a database).
+{ 'type' : 'type_goes_here', 'parameters' : { 'parameter_1' : 'value_1', 'parameter_2' : 'value_2' } }
+
+2. After adding data to the sync queue, (if internet exists) attempt to process the sync queue asynchronously using AJAX.
+Every item gets it's own request and corresponding callback function (see #3).
+
+3. If a response of { 'type' : 'type_goes_here', 'result' : '', 'success' : true } is returned:
+Delete the original sync request from the sync queue and continue.
+
+4. Otherwise the item will remain in the sync queue, and the server will ideally return something like:
+{ 'type' : 'type_goes_here', 'result' : 'error_message_goes_here', 'success' : false }
+
+
+Login
+
+1. User opens Tennote. They are presented with a login screen and a link to register.
+
+2. If they click on register, they fill out credentials (user/pass/email) which are all required.
+
+	- If internet exists: Send register request to server (through sync queue?), if successful, 
+	then return user to login page with message, otherwise print error message (e.g. user already in use)
+	Then add user to local database
+	
+	- If internet doesn't exist: 
