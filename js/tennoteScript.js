@@ -17,6 +17,7 @@ $(document).ready(function() {
 		$('#PlayerInfoTab').click(function() {
 			$('#PlayerInfo').show();
 			$('#MatchHistory').hide();
+			$('#EditPlayer').hide();
 		});
 		
 		$('#MatchHistoryTab').click(function() {
@@ -37,7 +38,48 @@ $(document).ready(function() {
 	
 	$(window).load(function() {
 		hideContent();
+		$('#Login').show();
+	});
+	
+	$('#LoginSubmit').click(function(e) {
+		e.preventDefault();
+		$('#Login').hide();
 		$('#NewUserWelcome').show();
+		return false;
+	});
+	
+	$('#registerSubmit').click(function(e) {
+		e.preventDefault();
+		$('#NewUserRegistration').hide();
+		$('#Login').show();
+		return false;
+	});
+	
+	$('#forgotLoginButton').click(function() {
+		$('#Login').hide();
+		$('#forgotLogin').show();
+	});
+	
+	$('#forgotLoginSubmit').click(function(e) {
+		e.preventDefault();
+		$('#forgotLogin').hide();
+		$('#Login').show();
+		return false;
+	});
+	
+	$('#RegisterButton').click(function() {
+		$('#Login').hide();
+		$('#NewUserRegistration').show();
+	});
+	
+	$('#registerSubmit').click(function(e) {
+		$('#NewUserRegistration').hide();
+		$('#Login').show();
+	});
+	
+	$('#LogoutLink').click(function() {
+		hideContent();
+		$('#Login').show();
 	});
 	
 	$('#PlayerBookLink').click(function() {
@@ -95,19 +137,66 @@ $(document).ready(function() {
 		return false; 
 	});
 	
+	$('#newMatchAfterScoreStats').change(function() {
+		if ( $(this).val() === 'yes' ){
+			$('#NewMatchAfterScoreStatsDiv').show();
+		} else {
+			$('#NewMatchAfterScoreStatsDiv').hide();
+		}
+	});
+	
 	$('#NewMatchBasicSubmit').click(function(e) {
+		e.preventDefault();
+		var whenRecordStats = $('input[name = "recordStats"]:checked').val()
+		if (whenRecordStats === 'duringMatch') {
+			$('#NewMatchBasicInfoForm').hide();
+			$('#NewMatchScoreFormat').show();
+			$('.MatchFormatFormContent').hide();
+			$('#ScoreFormatForm').show();
+			return false;
+		} else {
+			$('#NewMatchForms').hide();
+			$('#NewMatchAfterScore').show();
+			$('#NewMatchAfterScoreStatsDiv').hide();
+			return false;
+		}
+	});
+	
+	$('#ScoreFormatButton').click(function(e) {
+		e.preventDefault();
+		var formId = "#" + $('input[name = "NumberSets"]:checked').val() + 'Form';
+		$('#ScoreFormatForm').hide();
+		$('#NumSetsForm').show();
+		$('.NumSetsFormContent').hide();
+		$(formId).show();
+		return false;
+	});
+	
+/* 	$('#NumberGamesButton').click(function() {
+		$('#NumberGamesForm').hide();
+		$('#FinalSetForm').show();
+	}); */
+	
+	$('#NewMatchFormatSubmit').click(function(e) {
+		e.preventDefault();
+		$('#NewMatchForms').hide();
+		$('#NewMatchLiveScore').show();
+		return false;
+	}); 
+	
+/* 	$('#NewMatchBasicSubmit').click(function(e) {
 		e.preventDefault();
 		$('#NewMatchBasicInfo').hide();
 		$('#NewMatchStatistics').show();
 		return false; 
-	});
+	}); */
 	
-	$('#NewMatchStatisticsSubmit').click(function(e) {
+	$('#afterMatchStatSubmit').click(function(e) {
 		e.preventDefault();
-		$('#NewMatchStatistics').hide();
+		$('#NewMatch').hide();
 		$('#NewMatchSaved').show();
 		return false; 		
-	});
+	}); 
 	
 	$('#PlayerSearchLink').click(function() {
 		hideContent();
@@ -122,8 +211,11 @@ $(document).ready(function() {
 	$('#NewMatchLink').click(function() {
 		hideContent();
 		$('#NewMatch').show();
-		$('#NewMatchBasicInfo').show();
-		$('#NewMatchStatistics').hide();
+		$('.NewMatchContent').hide();
+ 		$('#NewMatchForms').show();
+		$('.NewMatchFormContent').hide();
+		$('#NewMatchBasicInfo').show(); 
+		$('#NewMatchBasicInfoForm').show();
 	});
 	
 	$('#AboutTennoteLink').click(function() {

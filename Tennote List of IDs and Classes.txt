@@ -11,6 +11,20 @@ header
 	{playerTabs}
 content
 	NewUserWelcome
+	Login
+		LoginForm
+			LoginUsername
+			LoginPassword
+			LoginSubmit
+		forgotLoginButton
+		RegisterButton
+	NewUserRegistration
+		RegistrationForm
+			registerUsername
+			registerEmail
+			registerPassword
+			registerPasswordRepeat
+			registerSubmit
 	PlayerBook
 		PlayerList
 			ListOfPlayers
