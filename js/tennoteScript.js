@@ -23,6 +23,7 @@ $(document).ready(function() {
 		$('#MatchHistoryTab').click(function() {
 			$('#PlayerInfo').hide();
 			$('#MatchHistory').show();
+			$('#EditPlayer').hide();
 		});
 	}
 	
