@@ -3,6 +3,7 @@ We need to discuss these; also, look over the server code as well.
 
 BACKEND REQUESTS 
 
+	**Logout??
 	**Edit Match - are we going to have this feature? seems like it would be good.
 	**Delete Player - these two are pretty self explanatory, but also important
 	**Delete Match
