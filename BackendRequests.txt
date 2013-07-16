@@ -1,53 +1,56 @@
-Tennote Backend requests: 
+Action items are marked with **, and notes are marked with ***.
+We need to discuss these; also, look over the server code as well.
 
-Login page: username/password
-	request to login
-	
-Registration page: username/password/email
-	request to create account
-	need to check to make sure username is not taken
-	maybe requirements for pw? (e.g., numbers/capital characters/symbols)
-	email validation?
-	also need to make sure all are in correct format--regular expressions?
-	
-upon clicking the playerbook link in the navmenu--need to be redirected to playerbook page that has 
-players filled in (i.e., all of the players that the user has recorded--just the names)
-	formatted alphabetical and each one is a link to a player page
-	
-Under playerbook--each individual player: 
-	send player's name, requesting player info (shot ratings), additional notes, contact info, and match history with that player
-	(i.e., once clicking on a player's name in the playerbook, goes to player page--the statistics and writings need to be pulled up with that page)
-	
-	furthermore--Under match history (for an individual player): chart is generated of all previous matches
-	each match is a link--sends that match info (i.e., date/score/surface/etc.) and requests specific info on that match (i.e., statistics, additional notes)
-	(i.e., upon clicking the match history tab, should see a list of all matches with that player in chart form with each row of the chart being a link to a match page
-	
-	match page--
-		upon clicking a specific match from the match history page, new page will have that match's specific information (statistics, additional notes, score) that is retrieved from server
-	
-Edit Player Form--on a given player's page, sends to server the player's current info, generates a form with the player's current info that can be edited and saved
-	upon saving--sends info to server like a new player form, except instead of being added to the playerbook it is replacing what is already there for the player
-	*might get a bit hairy if the person changes the name of the person? idk how the players will be saved in the database but maybe a player number for each one (i.e., player 1 would be the first player added to the playerbook for a given user)
+BACKEND REQUESTS 
 
-Player Search--sends a search, requests a list of players in the playerbook that match the search criteria (put into the form of a player search results page)
+	**Edit Match - are we going to have this feature? seems like it would be good.
+	**Delete Player - these two are pretty self explanatory, but also important
+	**Delete Match
+
+	Login page: username/password
+		request to login
+		
+	Registration page: username/password/email
+		request to create account
+		need to check to make sure username is not taken
+		maybe requirements for pw? (e.g., numbers/capital characters/symbols)
+		email validation?
+		also need to make sure all are in correct format--regular expressions?
+			
+	Edit Player Form-- ***this line should be a client side thing ---> on a given player's page, sends to server the player's current info, generates a form with the player's current info that can be edited and saved
+		upon saving--sends info to server like a new player form, except instead of being added to the playerbook it is replacing what is already there for the player
+		***yes, this is a common DB practice, although I haven't worked with CouchDB explicitly ---> *might get a bit hairy if the person changes the name of the person? idk how the players will be saved in the database but maybe a player number for each one (i.e., player 1 would be the first player added to the playerbook for a given user)
+
+	New Player Form--sends info about a new player to add to the match book
+		checks whether or not a player is in the playerbook already--i.e., "This player name is already in your playerbook" (can't add them to playerbook)
+		sends new player form info to the server to be saved to the playerbook (i.e., name, player ratings, personal notes, etc.--whatever is filled in)
+		Only mandatory field is the player name (need first and last)
+
+	New Match Form--sends info on the match 
+		(basic info submitted first (i.e., opponent name, date, tournament name, surface))--local storage for now
+		next: statistic info submitted (i.e., match stats, w/l, score, additional notes)
+		
+		once all is recorded, entire match info is sent to server as one giant piece to be added to a player's match history (with the specified opponent)
+			
+		if the player is in the playerbook already, match is appended to that history
+		else: a new player is added to the playerbook (message--"This player is not already in your playerbook. Would you like to add him to your playerbook?" "Yes, add him to my playerbook" or "No"--redirect back to form to change name)
+	
+CLIENT SIDE FILE DATA REQUESTS (i.e. this data is stored and accessed on the phone's filesystem; syncs with cloud)	
+	
+	Player Search--sends a search, requests a list of players in the playerbook that match the search criteria (put into the form of a player search results page)
 	sends info to server about what characteristics of a player are wanted--only one field needs to be filled out
-
-New Player Form--sends info about a new player to add to the match book
-	checks whether or not a player is in the playerbook already--i.e., "This player name is already in your playerbook" (can't add them to playerbook)
-	sends new player form info to the server to be saved to the playerbook (i.e., name, player ratings, personal notes, etc.--whatever is filled in)
-	Only mandatory field is the player name (need first and last)
-
-New Match Form--sends info on the match 
-	(basic info submitted first (i.e., opponent name, date, tournament name, surface))--local storage for now
-	next: statistic info submitted (i.e., match stats, w/l, score, additional notes)
 	
-	once all is recorded, entire match info is sent to server as one giant piece to be added to a player's match history (with the specified opponent)
-		
-	if the player is in the playerbook already, match is appended to that history
-	else: a new player is added to the playerbook (message--"This player is not already in your playerbook. Would you like to add him to your playerbook?" "Yes, add him to my playerbook" or "No"--redirect back to form to change name)
-		
-		
-		
-
-
-
+	upon clicking the playerbook link in the navmenu--need to be redirected to playerbook page that has 
+	players filled in (i.e., all of the players that the user has recorded--just the names)
+		formatted alphabetical and each one is a link to a player page
+	
+	Under playerbook--each individual player: 
+		send player's name, requesting player info (shot ratings), additional notes, contact info, and match history with that player
+		(i.e., once clicking on a player's name in the playerbook, goes to player page--the statistics and writings need to be pulled up with that page)
+	
+		furthermore--Under match history (for an individual player): chart is generated of all previous matches
+		each match is a link--sends that match info (i.e., date/score/surface/etc.) and requests specific info on that match (i.e., statistics, additional notes)
+		(i.e., upon clicking the match history tab, should see a list of all matches with that player in chart form with each row of the chart being a link to a match page
+	
+		match page--
+			upon clicking a specific match from the match history page, new page will have that match's specific information (statistics, additional notes, score) that is retrieved from server		
